@@ -1,17 +1,17 @@
 !(function() {
 
-    var _whichInput, _whichType
+    var _whichInput
 
-    $(document).click(function(e) {
-        $('#Jkeyboard').hide()
+    $(document).click(function() {
+        $('#keyboard').hide()
     })
 
-    function Jkeyboard(input) {
+    function keyboard(input) {
         var _input = input
 
         //key
-        function addJkeyboardDOM() {
-            $('body').append('<ul id="Jkeyboard">\
+        function addKeyboardDOM() {
+            $('body').append('<ul id="keyboard">\
 					<li class="keys">abc</li>\
 					<li class="keys">def</li>\
 					<li class="keys">ghi</li>\
@@ -26,7 +26,7 @@
                     <li class ="option" id="option3"></li>\
 					<li>Num</li>\
 					<li class="space">space</li>\
-					<li class="Jkeyboard-delete"><span class="glyphicon glyphicon-remove"></span></li>\
+					<li class="keyboard-delete"><span class="glyphicon glyphicon-remove"></span></li>\
                     <li class ="option" id="option4"></li>\
 					</ul>')
         }
@@ -53,16 +53,16 @@
             e.stopPropagation()
             _whichInput = this
 
-            if($('#Jkeyboard')[0] === undefined) {
+            if($('#keyboard')[0] === undefined) {
                 // append
-                addJkeyboardDOM()
+                addKeyboardDOM()
 
-                $('#Jkeyboard').click(function(e) {
+                $('#keyboard').click(function(e) {
                     e.stopPropagation()
                 })
 
                 // choose character group
-                $('#Jkeyboard li.keys').click(function() {
+                $('#keyboard li.keys').click(function() {
                     var _val = $(this).text();
                     var count =1;
                     for(var i=0;i<_val.length;i++){
@@ -71,47 +71,50 @@
                         count++;
                     }
                 })
+
                 //click the chosen character
-                $('#Jkeyboard li.option').click(function() {
+                $('#keyboard li.option').click(function() {
                     var _val = $(_whichInput).val() + $(this).text();
                     //console.log(_val)
                     $(_whichInput).val(_val);
                     $(_whichInput).focus();
                 })
+
                 //capitalize
-                $('#Jkeyboard li.cap').click(function() {
-                    $('#Jkeyboard li.keys').each(function(){
+                $('#keyboard li.cap').click(function() {
+                    $('#keyboard li.keys').each(function(){
                         var _val = $(this).text();
                         $(this).text(capitalDecapitalize(_val));
                         }
                     );
-                    $('#Jkeyboard li.option').each(function(){
+                    $('#keyboard li.option').each(function(){
                             var _val = $(this).text();
                             $(this).text(capitalDecapitalize(_val));
                         }
                     );
-
-
                 })
                 //space
-                $('#Jkeyboard li.space').click(function() {
+                $('#keyboard li.space').click(function() {
                     var _val = $(_whichInput).val() +' ';
                     $(_whichInput).val(_val);
                     $(_whichInput).focus();
                 })
 
                 //delet
-                $('#Jkeyboard li.Jkeyboard-delete').click(function() {
+                $('#keyboard li.keyboard-delete').click(function() {
                     var _val = $(_whichInput).val();
-                    $(_whichInput).val(deleteTab(_val, _whichType))
+                    $(_whichInput).val(deleteTab(_val))
                     $(_whichInput).focus();
                 })
+
+                //todo: click num/word
+                //todo: if click, indicate which has just be clicked
             }
-            $('#Jkeyboard').show()
+            $('#keyboard').show()
         })
 
     }
 
-    new Jkeyboard($('input[phone]'), 'phone')
+    new keyboard($('input'))
 
 })()

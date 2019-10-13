@@ -1,13 +1,39 @@
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
-body { width: 100%; margin: 0 auto; overflow-x: hidden; background: #fff; color:#333; font-size: 20px; }
-img { border:none; }
-ol,ul,li { list-style:none; }
+body,div,ul,li {
+    margin:0;
+    padding:0;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background: #fff;
+    color:#333;
+    font-size: 20px;
+}
+
+ol,ul,li {
+    list-style:none;
+}
 input{
-    color: #333;
-    outline: none;
     font-size: 15px
 }
-table { border-collapse:collapse; }
-html { overflow-x: hidden; }
-#Jkeyboard{ width: 4cm; font-size: 8px; position: fixed; left: 0; up: 0; display: none; }
-#Jkeyboard li{ width: 25%; height: 1cm; background: #fff; line-height: 1cm; text-align: center; box-sizing: border-box; border: 1px solid #e6e6e6; border-left: none; border-bottom: none; float: left; }
+html {
+    overflow-x: hidden;
+}
+#keyboard{
+    width: 4cm;
+    font-size: 8px;
+    position: fixed;
+}
+#keyboard li{
+    width: 25%;
+    height: 1cm;
+    line-height: 1cm;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    border-left: none;
+    border-bottom: none;
+    float: left;
+}

@@ -63,7 +63,6 @@
 
                 // choose character group
                 $('#Jkeyboard li.keys').click(function() {
-                    // input里原有的值 + 新输入的值
                     var _val = $(this).text();
                     var count =1;
                     for(var i=0;i<_val.length;i++){
@@ -74,7 +73,6 @@
                 })
                 //click the chosen character
                 $('#Jkeyboard li.option').click(function() {
-                    // input里原有的值
                     var _val = $(_whichInput).val() + $(this).text();
                     //console.log(_val)
                     $(_whichInput).val(_val);

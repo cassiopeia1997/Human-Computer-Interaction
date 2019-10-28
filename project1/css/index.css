@@ -22,14 +22,15 @@ html {
     overflow-x: hidden;
 }
 #keyboard{
-    width: 4cm;
+    width: 2cm;
     font-size: 8px;
     position: fixed;
 }
 #keyboard li{
+    font-size:3px;
     width: 25%;
-    height: 1cm;
-    line-height: 1cm;
+    height: 0.5cm;
+    line-height: 0.5cm;
     text-align: center;
     box-sizing: border-box;
     border: 1px solid #e6e6e6;
